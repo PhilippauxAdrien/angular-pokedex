@@ -1,0 +1,71 @@
+<div *ngIf="loading">
+		<div class="pokeball">
+		    <div class="upper">
+		      <div class="inner"></div>
+		    </div>
+		    <div class="middle"></div>
+		    <div class="lower">
+		      <div class="inner"></div>
+		    </div>
+
+		  </div>
+</div>
+
+
+<div *ngIf="pokemon && !loading" class="card-detail">
+
+	<mat-card>
+		<mat-card-content>
+
+			<mat-grid-list cols="2" rowHeight="170px">
+			  <mat-grid-tile
+			      [colspan]="1"
+			      [rowspan]="1">
+			    
+			    <mat-list style="text-align: center">
+				  <mat-list-item  >
+				   		<img src="/assets/pokemon-sprites/official-artwork/{{pokemon.id}}.png" alt="{{pokemon.name}}" width="120px">
+				  </mat-list-item>
+				  <mat-list-item style="display: inline-block; padding-top: 30px;">
+				   		<p> No. {{pokemon.id}} </p>
+				  </mat-list-item>
+				</mat-list>
+
+			  </mat-grid-tile>
+			  
+			  <mat-grid-tile
+			      [colspan]="1"
+			      [rowspan]="1">
+			    
+			    <mat-list>
+				  <mat-list-item>
+				   		<h2 class="name-poke"> {{frenchName}} </h2>
+				  </mat-list-item>
+				  <mat-list-item>
+				   	<mat-chip-list>
+			        	<mat-chip *ngFor="let type of typesArray">
+			        		{{type}}
+			        	</mat-chip>
+		      		</mat-chip-list>
+				  </mat-list-item>
+				  <mat-list-item>
+				   		<p> Taille : {{pokemon.height | sliceDecimal}} m</p>
+				  </mat-list-item>
+				  <mat-list-item>
+				   		<p> Poids : {{pokemon.weight | sliceDecimal}} kg</p>
+				  </mat-list-item>
+				</mat-list>
+
+			  </mat-grid-tile>
+
+			  <mat-grid-tile
+			      [colspan]="2"
+			      [rowspan]="1">
+			    <p> {{frenchDescription}} </p>
+			  </mat-grid-tile>
+			</mat-grid-list>
+
+		</mat-card-content>
+	</mat-card>
+
+</div>

@@ -1,0 +1,34 @@
+
+<div class="container">
+
+	<div *ngIf="loading">
+
+		<div class="pokeball">
+		    <div class="upper">
+		      <div class="inner"></div>
+		    </div>
+		    <div class="middle"></div>
+		    <div class="lower">
+		      <div class="inner"></div>
+		    </div>
+		  </div>
+	</div>
+	
+	<mat-form-field class="search-bar">
+    	<input matInput  [(ngModel)]="searchText" type="search" placeholder="Search for a pokemon" value="">
+  	</mat-form-field>
+
+	<!--  MAT-NAV LIST -->
+		<mat-nav-list>
+		  <mat-list-item *ngFor="let pokemon of pokemons" (click)='onSelect(getIdFromUrl(pokemon.url))' [style.display]="isSearched(searchText, pokemon)?'inherit':'none'">
+		    <div *ngIf="isSearched(searchText, pokemon)">
+			    <img matListAvatar src="/assets/pokemon-sprites/sprites/{{getIdFromUrl(pokemon.url)}}.png" alt="{{pokemon.name}}">
+			    <p matLine>
+			      <span> {{getIdFromUrl(pokemon.url)}}. </span>
+			      <span class="demo-2"> {{ pokemon.name | capitalize }} </span>
+			    </p>
+		    </div>
+		  </mat-list-item>
+		</mat-nav-list>
+
+</div>

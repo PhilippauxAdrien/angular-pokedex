@@ -1,0 +1,15 @@
+<section class="app">
+	<mat-toolbar color="primary" class="mat-elevation-z10">
+      Pokédex
+    </mat-toolbar>
+
+	<mat-drawer-container class="example-container">
+	  <mat-drawer mode="side" opened="true" class="leftside">
+	  		<app-pokemons-list (idPokemonSelected)="handleIdUpdated($event)"> </app-pokemons-list>
+	  </mat-drawer>
+	  <mat-drawer-content class="rightside">
+  			<app-pokemon-detail [idPokemon]="idPokemon" > </app-pokemon-detail>
+	  </mat-drawer-content>
+	</mat-drawer-container>
+
+</section>

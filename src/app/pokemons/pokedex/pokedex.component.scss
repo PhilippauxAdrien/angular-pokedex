@@ -1,0 +1,32 @@
+
+// some basic resets
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.app{
+    height: 100vh;    // emmet h100vh
+}
+
+mat-toolbar {
+  z-index: 10;     // emmet z10
+}
+
+.example-container {
+     height: 100%;    // emmet h100vh
+
+  margin: 10px;
+  border: 1px solid #555;
+}
+
+.leftside{
+	width: 30%;
+}
+
+.rightside{
+	width: 70%;
+	margin: auto;
+	padding-top: 100px;
+}
